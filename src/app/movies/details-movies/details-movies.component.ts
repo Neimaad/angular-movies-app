@@ -8,7 +8,7 @@ import { MovieService } from '../services/movie.service';
   templateUrl: './details-movies.component.html',
   styleUrls: ['./details-movies.component.css']
 })
-export class DetailsMoviesComponent implements OnInit, OnChanges {
+export class DetailsMoviesComponent implements OnInit {
     movie?: Movie;
 
     constructor(
@@ -21,10 +21,6 @@ export class DetailsMoviesComponent implements OnInit, OnChanges {
             .subscribe(response => {
                 this.movie = response
             })
-    }
-
-    ngOnChanges(): void {
-        this.movie = this.movie;
     }
 
     updateComments(updatedComments: Comment) {
