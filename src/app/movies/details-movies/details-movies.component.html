@@ -8,13 +8,15 @@
                 <h2>{{ movie?.title }}</h2>
                 <h3>{{ movie?.tagline }}</h3>
                 <p class="meta-wrap">
-                <span class="rating">rating: {{ movie?.vote_average }}</span>
-                <span class="meta">{{ movie?.language }} / {{ movie?.runtime }} min. / {{ movie?.release_date }}</span>
+                    <span class="rating">rating: {{ movie?.vote_average }}</span>
+                    <span class="meta">{{ movie?.language }} / {{ movie?.runtime }} min. / {{ movie?.release_date }}</span>
                 </p>
 
                 <ul class="genres">
                     <li *ngFor="let genre of movie?.genres">{{ genre.name }}</li>
                 </ul>
+
+                <app-comments-movies *ngIf="movie" [movie]="movie" (updatedCommentsEvent)="updateComments($event)"></app-comments-movies>
 
             </div>
         </div>

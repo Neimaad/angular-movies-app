@@ -1,0 +1,20 @@
+
+
+
+<ul *ngFor="let comment of movie?.comments">
+    <li>Rating: {{ comment.rating }}</li>
+    <li>Comment: {{ comment.text }}</li>
+    <li>Date: {{ comment.date }}</li>
+</ul>
+
+<form [formGroup]="addComment" (ngSubmit)="onSubmit(movie!.id)">
+    <div>
+        <label for="title">Rating :</label>
+        <input id="rating" type="number" min="1" max="10" formControlName="rating">
+    </div>
+    <div>
+        <label for="text">Text :</label>
+        <textarea id="text" formControlName="text"></textarea>
+    </div>
+    <button class="button" type="submit">Comment</button>
+</form>
