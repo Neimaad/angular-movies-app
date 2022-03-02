@@ -3,13 +3,13 @@ export class Movie {
     id!: number;
     genres!: Genre[];
     title!: string;
-    tagline!: string;
-    description!: string;
+    tagline?: string;
+    overview!: string;
     release_date!: string;
-    duration!: number;
-    rating!: string;
+    runtime?: number;
+    vote_average!: string;
     language!: string;
-    image: string = "";
+    poster_path!: string;
 }
 export class Genre {
     id!: number;

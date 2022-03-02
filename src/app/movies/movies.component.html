@@ -1,17 +1,13 @@
 <div id="center" class="main center">
-
     <div class="container">
-
       <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-          <div *ngFor="let movie of movies ; let index=index" class="card">
+        <div *ngFor="let movie of movies ; let index=index" class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="card">
             <a routerLink="/details/{{ movie.id }}">
-                <img [src]=movie.image/>
+                <img [src]=movie?.poster_path/>
                 <p>{{ movie.title }}</p>
             </a>
           </div>
         </div>
-
     </div>
-
 </div>
