@@ -26,16 +26,14 @@ export class MoviesComponent implements OnInit {
                             this.updateGenre(routeParams['genre']);
                         });
                     }
-                    
+
                 }
             );
     }
 
     updateGenre(genre: string): void {
         this.movies = this.moviesBase;
-        // console.log(genre.name);
         this.movies = this.movies.filter(movie => movie.genres.find(g => g.name === genre))
-        // console.log(this.movies);
     }
 
 }
