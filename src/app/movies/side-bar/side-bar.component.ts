@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Genre } from '../movies/services/movie.models';
-import { MovieService } from '../movies/services/movie.service';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Genre, Movie } from '../services/movie.models';
+import { MovieService } from '../services/movie.service';
 
 @Component({
   selector: 'app-side-bar',
@@ -9,8 +9,8 @@ import { MovieService } from '../movies/services/movie.service';
 })
 export class SideBarComponent implements OnInit {
     genres!: Genre[];
-
-     constructor(private movieService: MovieService) { }
+    
+    constructor(private movieService: MovieService) { }
 
     ngOnInit(): void {
         this.movieService.getGenres()

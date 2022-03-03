@@ -46,6 +46,7 @@ body {
     letter-spacing: 1.25px;
 }
 #sidebarMenu {
+    overflow-y: scroll;
     height: 100%;
     position: fixed;
     left: 0;
@@ -53,7 +54,7 @@ body {
     transition: transform 250ms ease-in-out;
     background: #FFFFFF;
 }
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1439px) {
   .header .logo {
     margin-left: 60px;
   }
@@ -66,7 +67,7 @@ body {
     margin: 90px 0 0 0;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1439px) {
   .header {
     z-index: 10;
   }

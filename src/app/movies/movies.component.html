@@ -1,13 +1,12 @@
+
+
+<!-- <app-side-bar (updatedGenreEvent)="updateGenre($event)"></app-side-bar> -->
+
 <div id="center" class="main center">
     <div class="container">
       <div class="row">
         <div *ngFor="let movie of movies ; let index=index" class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-          <div class="card">
-            <a routerLink="/details/{{ movie.id }}">
-                <img [src]=movie?.poster_path/>
-                <p>{{ movie.title }}</p>
-            </a>
-          </div>
+            <app-card-movies [movie]="movie"></app-card-movies>
         </div>
     </div>
 </div>
