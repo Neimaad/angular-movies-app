@@ -1,0 +1,32 @@
+
+.comments {
+    height: 400px;
+    overflow-y: scroll;
+    background-color: rgba(213, 220, 228, 0.2);
+    border-radius: 5px;
+}
+
+.comment {
+    width: 80%;
+    background-color: rgba(213, 220, 228, 0.4);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+ul li {
+    list-style: none;
+}
+
+.form-comments {
+    margin-left: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.form-comments #rating {
+    margin-bottom: 10px;
+}
+.form-comments textarea {
+    resize: none;
+    width: 80%;
+    height: 80px;
+}
