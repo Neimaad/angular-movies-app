@@ -1,5 +1,6 @@
 import { Component, OnChanges, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import * as moment from 'moment';
 import { Movie, Comment } from 'src/app/movies/services/movie.models';
 import { MovieService } from '../services/movie.service';
 
@@ -19,7 +20,8 @@ export class DetailsMoviesComponent implements OnInit {
         const id = Number(this.route.snapshot.paramMap.get('id'));
         this.movieService.getMovieById(id)
             .subscribe(response => {
-                this.movie = response
+                this.movie = response;
+                this.movie.comments?.map(comment => comment.date = moment(comment.date).format('DD/MM/YYYY hh:mm'))
             })
     }
 
