@@ -16,24 +16,28 @@ export class MoviesComponent implements OnInit {
 
     ngOnInit(): void {
         const genre = this.route.snapshot.paramMap.get('genre');
-        this.movieService.getMovies()
-            .subscribe(response => {
-                    this.movies = response;
-                    
-                    if(genre){
-                        this.moviesBase = response;
-                        this.route.params.subscribe(routeParams => {
-                            this.updateGenre(routeParams['genre']);
-                        });
-                    }
 
-                }
-            );
+        this.movieService.getMovies().subscribe(response => {
+            this.movies = response;
+
+            if(genre){
+                this.moviesBase = response;
+                this.route.params.subscribe(routeParams => {
+                    this.updateGenre(routeParams['genre']);
+                });
+            }
+
+        });
     }
 
-    updateGenre(genre: string): void {
+    updateGenre(genre: any): void {
         this.movies = this.moviesBase;
-        this.movies = this.movies.filter(movie => movie.genres.find(g => g.name === genre))
+        if(Number(genre)){
+            this.movies = this.movies.filter(movie => movie.genres.find(g => g.id === Number(genre)))
+        }
+        else {
+            this.movies = this.movies.filter(movie => movie.genres.find(g => g.name === genre))
+        }
     }
 
 }
